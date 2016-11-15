@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 @Component({
   selector: 'my-app',
-  template: '<h1>My Api App!</h1>'
+  template: `
+          <nav-component></nav-component>
+          <main-component></main-component>
+    
+  `
 })
 export class AppComponent { }
