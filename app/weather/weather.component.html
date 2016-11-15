@@ -1,0 +1,48 @@
+<div class="jumbotron">
+    <div class="container">
+        <button *ngIf="toggle" class="btn btn-info" (click)="textaSpar()"><h4>Texta Yfirlit</h4></button>
+        <button *ngIf="!toggle" class="btn btn-info" (click)="eitthvadAnnad()"><h4>Veðurstöðvar</h4></button>
+        <div *ngIf="!toggle" class="row">
+            <h2 class="my-header">Veðurhorfur<br>&amp; Yfirlit</h2>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <ul class="list-group">
+                    <li class="row list-group-item" (click)="landinu()">Landið</li>
+                    <li class="row list-group-item" (click)="rvk()">Höfuðborgarsvæðið</li>
+                    <li class="row list-group-item" (click)="sudurland()">Suðurland</li>
+                    <li class="row list-group-item" (click)="faxafloi()">Faxaflói</li>
+                    <li class="row list-group-item" (click)="breidafj()">Breiðafjörður</li>
+                    <li class="row list-group-item" (click)="vestfirdir()">Vestfirðir</li>
+                    <li class="row list-group-item" (click)="strandir()">Strandir og Norðurland vestra</li>
+                    <li class="row list-group-item" (click)="nordurland()">Norðurlandi eystra</li>
+                    <li class="row list-group-item" (click)="austurland()">Austurland að Glettingi</li>
+                    <li class="row list-group-item" (click)="austfirdir()">Austfirðir</li>
+                    <li class="row list-group-item" (click)="sausturland()">Suðausturland</li>
+                </ul>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" *ngFor="let overview of weatherOverview">
+                <div class="list-group-item">
+                    <h2>{{ overview.title }}</h2><br>
+                    {{ overview.creation | date:"dd.MMM yyyy" }}<br>
+                    <blockquote>
+                    {{ overview.content }}
+                    </blockquote><br>
+                    <span class="badge">gildir til {{ overview.valid_to | date:"dd.MMM HH:mm" }}</span>
+                </div> 
+            </div>   
+        </div>
+        <div *ngIf="toggle" class="row">
+            <h2 class="my-header">Veðurstöðvar<br>&amp; spár</h2>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+               
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" *ngFor="let forecast of weatherForecast">
+                <div class="list-group-item">
+                   <h2>{{ forecast.name }}</h2><br>
+                   {{ forecast.name.ftime }}<br>
+                   {{ forecast.W }}<br>
+                </div> 
+            </div>   
+        </div>
+    </div>
+</div>
+                           

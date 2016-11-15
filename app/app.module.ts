@@ -9,8 +9,9 @@ import { WelcomeComponent }  from './welcome/welcome.component';
 import { FlightComponent }  from './flight/flight.component';
 import { ConcertComponent }  from './concert/concert.component';
 import { EarthquakeComponent }  from './earthquake/earthquake.component';
+import { WeatherComponent }  from './weather/weather.component';
 
-
+import { NowComponent }  from './services/now';
 import { AppRoutingModule }  from './services/app-routing.module'; 
 
 @NgModule({
@@ -27,9 +28,10 @@ import { AppRoutingModule }  from './services/app-routing.module';
     WelcomeComponent,
     FlightComponent,
     ConcertComponent,
-    EarthquakeComponent
+    EarthquakeComponent,
+    WeatherComponent,
     
-    
+    NowComponent
      ],
   bootstrap:    [ AppComponent ]
 })

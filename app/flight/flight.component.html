@@ -1,19 +1,19 @@
 <div class="jumbotron">
   <div class="container">
-    <button *ngIf="!toggle" class="btn btn-info" (click)="getArrivals()">See Arrivals</button>
-    <button *ngIf="toggle" class="btn btn-info" (click)="getDepartures()">See Departures</button>
+    <button *ngIf="!toggle" class="btn btn-info" (click)="getArrivals()"><h4>Sjá Komuflug</h4></button>
+    <button *ngIf="toggle" class="btn btn-info" (click)="getDepartures()"><h4>Sjá Brottfarir</h4></button>
     <div *ngIf="toggle">
-        <h3 class="my-header">{{ numberOfArrivals }} Arrivals<br>at Kef airport today</h3>
+        <h3 class="my-header">{{ numberOfArrivals }} flug lenda ás<br>Keflavíkurflugvelli í dag</h3>
         <div class="row">
             <ul class="list-group">
                 <li class="row list-group-item" *ngFor="let arr of flightArrivals">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                        <h4>{{ arr.date }} {{ arr.plannedArrival }}</h4> 
+                        <h3>{{ arr.plannedArrival }}</h3>
                         ____________________
                         <h4>{{ arr.airline }}<br>{{ arr.flightNumber }}</h4>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                        from<h3>{{ arr.from }}</h3> 
+                        frá <h3>{{ arr.from }}</h3> 
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                         <span class="badge pull-right"><h4>{{ arr.realArrival }}</h4></span>
@@ -23,7 +23,7 @@
         </div>
     </div>
     <div *ngIf="!toggle">
-        <h3 class="my-header">{{ numberOfDepartures }} Departures<br>from Kef airport today</h3>
+        <h3 class="my-header">{{ numberOfDepartures }} flug flúga frá<br>Keflavíkurflugvelli í dag</h3>
         <div class="row">
             <ul class="list-group">
                 <li class="row list-group-item" *ngFor="let dep of flightDepartures">
@@ -33,7 +33,7 @@
                         <h4>{{ dep.airline }}<br>{{ dep.flightNumber }}</h4>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                        to<h3>{{ dep.to }}</h3> 
+                        til<h3>{{ dep.to }}</h3> 
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                         <span class="badge pull-right"><h4>{{ dep.realArrival }}</h4></span>
