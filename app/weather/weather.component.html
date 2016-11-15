@@ -1,10 +1,10 @@
 <div class="jumbotron">
     <div class="container">
-        <button *ngIf="toggle" class="btn btn-info" (click)="textaSpar()"><h4>Texta Yfirlit</h4></button>
-        <button *ngIf="!toggle" class="btn btn-info" (click)="eitthvadAnnad()"><h4>Veðurstöðvar</h4></button>
+        <button *ngIf="toggle" class="btn btn-info" (click)="texts()"><h4>Texta Yfirlit</h4></button>
+        <button *ngIf="!toggle" class="btn btn-info" (click)="stations()"><h4>Veðurstöðvar</h4></button>
         <div *ngIf="!toggle" class="row">
             <h2 class="my-header">Veðurhorfur<br>&amp; Yfirlit</h2>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                 <ul class="list-group">
                     <li class="row list-group-item" (click)="landinu()">Landið</li>
                     <li class="row list-group-item" (click)="rvk()">Höfuðborgarsvæðið</li>
@@ -19,7 +19,7 @@
                     <li class="row list-group-item" (click)="sausturland()">Suðausturland</li>
                 </ul>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" *ngFor="let overview of weatherOverview">
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" *ngFor="let overview of weatherOverview">
                 <div class="list-group-item">
                     <h2>{{ overview.title }}</h2><br>
                     {{ overview.creation | date:"dd.MMM yyyy" }}<br>
@@ -31,15 +31,22 @@
             </div>   
         </div>
         <div *ngIf="toggle" class="row">
-            <h2 class="my-header">Veðurstöðvar<br>&amp; spár</h2>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <h2 class="my-header">Veðurstöðvar<br>______________________</h2>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                <ul class="list-group">
+                    <li class="row list-group-item" (click)="rvk1()">Reykjavík</li>
+                    <li class="row list-group-item" (click)="ak1()">Akureyri</li>
+                    <li class="row list-group-item" (click)="egl()">Eigilsstaðir</li>
                
+                </ul>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" *ngFor="let forecast of weatherForecast">
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                 <div class="list-group-item">
-                   <h2>{{ forecast.name }}</h2><br>
-                   {{ forecast.name.ftime }}<br>
-                   {{ forecast.W }}<br>
+                    <h2>{{ observationName }}</h2>kl: {{ observationTime | date:"HH:mm" }}<br>
+                    Hiti : {{ observationTemp }}<br>
+                    Vindhraði {{ observationWind }} m/s<br>
+                    Vindátt {{ observationWindDirection }}<br>
+                    <br>
                 </div> 
             </div>   
         </div>

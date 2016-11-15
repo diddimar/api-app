@@ -11,7 +11,14 @@ export class WeatherComponent implements OnInit {
     weatherOverview : string[];
     value = "5";
 
-    weatherForecast : string[];
+    weatherObservations: string[];
+
+    stationNumber = "1";
+    observationName: string;
+    observationTime: string;
+    observationTemp: string;
+    observationWind: string;
+    observationWindDirection: string;
     
     toggle: boolean;
 
@@ -21,17 +28,41 @@ export class WeatherComponent implements OnInit {
 
     ngOnInit() { 
          this.getWeatherOverview();
-         this.getWeatherForecast();
+         this.getObservations();
     }
 
-    textaSpar(){
+    texts(){
         this.toggle = false;
     }
 
-    eitthvadAnnad(){
+    stations(){
         this.toggle = true;
     }
 
+    getObservations() {
+        this.http.get('https://crossorigin.me/http://apis.is/weather/observations/is?stations='+this.stationNumber+'&time=1h&anytime=0]')
+        .map(res => res.json())
+        .subscribe((observations) => {
+          this.weatherObservations = observations.results[0];
+          this.observationName = observations.results[0].name;
+          this.observationTime = observations.results[0].time;
+          this.observationTemp = observations.results[0].T;
+          this.observationWind = observations.results[0].F;
+          this.observationWindDirection = observations.results[0].D;
+        })
+    }
+    rvk1(){
+      this.stationNumber = "1";
+      this.getObservations();
+    }
+    ak1(){
+      this.stationNumber = "422";
+      this.getObservations();
+    }
+    egl(){
+      this.stationNumber = "571";
+      this.getObservations();
+    }
 
 //-----------------------TextaSpar----------------//
   getWeatherOverview() {
@@ -85,15 +116,6 @@ export class WeatherComponent implements OnInit {
   sausturland(){
       this.value = "39";
       this.getWeatherOverview();
-  }
-
-
-  getWeatherForecast(){
-     this.http.get('http://apis.is/weather/forecasts/is?stations=1')
-    .map(res => res.json())
-    .subscribe((forecast) => {
-      this.weatherForecast = forecast.results;
-    })
   }
 
 }
