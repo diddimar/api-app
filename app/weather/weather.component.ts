@@ -9,9 +9,10 @@ import { Http } from '@angular/http';
 export class WeatherComponent implements OnInit {
 
     weatherOverview : string[];
-    value = "5";
+    textaSpa = "5";
 
     weatherObservations: string[];
+    countrySection= "isl";
 
     stationNumber = "1";
     observationName: string;
@@ -19,6 +20,7 @@ export class WeatherComponent implements OnInit {
     observationTemp: string;
     observationWind: string;
     observationWindDirection: string;
+    observationDescription: string;
     
     toggle: boolean;
 
@@ -34,10 +36,50 @@ export class WeatherComponent implements OnInit {
     texts(){
         this.toggle = false;
     }
-
     stations(){
         this.toggle = true;
     }
+
+
+    vf(){
+        this.countrySection = "vf";
+    }
+
+    nv(){
+        this.countrySection = "nv";
+    }
+    
+    na(){
+        this.countrySection = "na";
+    }
+
+    al(){
+        this.countrySection = "al";
+    }
+
+    br(){
+        this.countrySection = "br";
+    }
+
+    mh(){
+        this.countrySection = "mh";
+    }
+
+    af(){
+        this.countrySection = "af";
+    } 
+
+    fa(){
+        this.countrySection = "fa";
+    }
+
+    su(){
+        this.countrySection = "su";
+    }
+
+    sa(){
+        this.countrySection = "sa";
+    } 
 
     getObservations() {
         this.http.get('https://crossorigin.me/http://apis.is/weather/observations/is?stations='+this.stationNumber+'&time=1h&anytime=0]')
@@ -49,24 +91,46 @@ export class WeatherComponent implements OnInit {
           this.observationTemp = observations.results[0].T;
           this.observationWind = observations.results[0].F;
           this.observationWindDirection = observations.results[0].D;
+          this.observationDescription = observations.results[0].W;
         })
     }
+    //======----faxafloi----------->>>
     rvk1(){
       this.stationNumber = "1";
       this.getObservations();
     }
-    ak1(){
-      this.stationNumber = "422";
+    blfj1(){
+      this.stationNumber = "1487";
       this.getObservations();
     }
-    egl(){
-      this.stationNumber = "571";
+    hell(){
+      this.stationNumber = "31392";
+      this.getObservations();
+    }
+    grv(){
+      this.stationNumber = "1361";
+      this.getObservations();
+    }
+    eirb(){
+      this.stationNumber = "4038";
+      this.getObservations();
+    }
+    selv(){
+      this.stationNumber = "31380";
+      this.getObservations();
+    }
+
+
+    //<<<<<<-------faxafloi-----====
+
+    ak1(){
+      this.stationNumber = "422";
       this.getObservations();
     }
 
 //-----------------------TextaSpar----------------//
   getWeatherOverview() {
-    this.http.get('http://apis.is/weather/texts/is?types=' + this.value)
+    this.http.get('http://apis.is/weather/texts/is?types=' + this.textaSpa)
     .map(res => res.json())
     .subscribe((overview) => {
       this.weatherOverview = overview.results;
@@ -74,47 +138,47 @@ export class WeatherComponent implements OnInit {
   }
 
   landinu(){
-      this.value = "2";
+      this.textaSpa = "2";
       this.getWeatherOverview();
   }
   rvk(){
-      this.value = "3";
+      this.textaSpa = "3";
       this.getWeatherOverview();
   }
   sudurland(){
-      this.value = "31";
+      this.textaSpa = "31";
       this.getWeatherOverview();
   }
   faxafloi(){
-      this.value = "32";
+      this.textaSpa = "32";
       this.getWeatherOverview();
   }
   breidafj(){
-      this.value = "33";
+      this.textaSpa = "33";
       this.getWeatherOverview();
   }
   vestfirdir(){
-      this.value = "34";
+      this.textaSpa = "34";
       this.getWeatherOverview();
   }
   strandir(){
-      this.value = "35";
+      this.textaSpa = "35";
       this.getWeatherOverview();
   }
   nordurland(){
-      this.value = "36";
+      this.textaSpa = "36";
       this.getWeatherOverview();
   }
   austurland(){
-      this.value = "37";
+      this.textaSpa = "37";
       this.getWeatherOverview();
   }
   austfirdir(){
-      this.value = "38";
+      this.textaSpa = "38";
       this.getWeatherOverview();
   }
   sausturland(){
-      this.value = "39";
+      this.textaSpa = "39";
       this.getWeatherOverview();
   }
 

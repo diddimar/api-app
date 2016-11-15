@@ -6,17 +6,17 @@
             <h2 class="my-header">Veðurhorfur<br>&amp; Yfirlit</h2>
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                 <ul class="list-group">
-                    <li class="row list-group-item" (click)="landinu()">Landið</li>
-                    <li class="row list-group-item" (click)="rvk()">Höfuðborgarsvæðið</li>
-                    <li class="row list-group-item" (click)="sudurland()">Suðurland</li>
-                    <li class="row list-group-item" (click)="faxafloi()">Faxaflói</li>
-                    <li class="row list-group-item" (click)="breidafj()">Breiðafjörður</li>
-                    <li class="row list-group-item" (click)="vestfirdir()">Vestfirðir</li>
-                    <li class="row list-group-item" (click)="strandir()">Strandir og Norðurland vestra</li>
-                    <li class="row list-group-item" (click)="nordurland()">Norðurlandi eystra</li>
-                    <li class="row list-group-item" (click)="austurland()">Austurland að Glettingi</li>
-                    <li class="row list-group-item" (click)="austfirdir()">Austfirðir</li>
-                    <li class="row list-group-item" (click)="sausturland()">Suðausturland</li>
+                    <li class="row list-group-item" (click)="landinu()">Landið<img class="list-image pull-right" src="app/images/map/isl.PNG"/></li>
+                    <li class="row list-group-item" (click)="rvk()">Höfuðborgarsvæðið<img class="list-image pull-right" src="app/images/map/ho.PNG"/></li>
+                    <li class="row list-group-item" (click)="sudurland()">Suðurland<img class="list-image pull-right" src="app/images/map/su.PNG"/></li>
+                    <li class="row list-group-item" (click)="faxafloi()">Faxaflói<img class="list-image pull-right" src="app/images/map/fa.PNG"/></li>
+                    <li class="row list-group-item" (click)="breidafj()">Breiðafjörður<img class="list-image pull-right" src="app/images/map/br.PNG"/></li>
+                    <li class="row list-group-item" (click)="vestfirdir()">Vestfirðir<img class="list-image pull-right" src="app/images/map/vf.PNG"/></li>
+                    <li class="row list-group-item" (click)="strandir()">Strandir og Norðurland <img class="list-image pull-right" src="app/images/map/nv.PNG"/></li>
+                    <li class="row list-group-item" (click)="nordurland()">Norðurland eystra<img class="list-image pull-right" src="app/images/map/na.PNG"/></li>
+                    <li class="row list-group-item" (click)="austurland()">Austurland að Glettingi<img class="list-image pull-right" src="app/images/map/al.PNG"/></li>
+                    <li class="row list-group-item" (click)="austfirdir()">Austfirðir<img class="list-image pull-right" src="app/images/map/af.PNG"/></li>
+                    <li class="row list-group-item" (click)="sausturland()">Suðausturland<img class="list-image pull-right" src="app/images/map/sa.PNG"/></li>
                 </ul>
             </div>
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" *ngFor="let overview of weatherOverview">
@@ -31,23 +31,73 @@
             </div>   
         </div>
         <div *ngIf="toggle" class="row">
-            <h2 class="my-header">Veðurstöðvar<br>______________________</h2>
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                <ul class="list-group">
-                    <li class="row list-group-item" (click)="rvk1()">Reykjavík</li>
-                    <li class="row list-group-item" (click)="ak1()">Akureyri</li>
-                    <li class="row list-group-item" (click)="egl()">Eigilsstaðir</li>
-               
+            <div style="witdh:100%" class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+            </div>
+            <div class="container col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                <h2 class="my-header">Landshlutar<br>____________</h2>
+                <ul class="vertical-img-nav col-lg-4 col-md-5 col-sm-6 col-xs-7">
+                    <li><img class="image" src="app/images/map/vf.PNG" data-toggle="tooltip" title="Vestfirðir" (click)="vf()"/></li>
+                    <li><img class="image" src="app/images/map/nv.PNG" data-toggle="tooltip" title="Strandir og Norðurland vestra" (click)="nv()"/></li>
+                    <li><img class="image" src="app/images/map/na.PNG" data-toggle="tooltip" title="Norðurland eystra" (click)="na()"/></li>
+                    <li><img class="image" src="app/images/map/al.PNG" data-toggle="tooltip" title="Austurland að Glettingi" (click)="al()"/></li>
+                    <li><img class="image" src="app/images/map/br.PNG" data-toggle="tooltip" title="Breiðafjörður" (click)="br()"/></li>
+                    <li><img class="image" src="app/images/map/isl.PNG"/></li>
+                    <li><img class="image" src="app/images/map/mh.PNG" data-toggle="tooltip" title="Mið Hálendið" (click)="mh()"/></li>
+                    <li><img class="image" src="app/images/map/af.PNG" data-toggle="tooltip" title="Austfirðir" (click)="af()"/></li>
+                    <li><img class="image" src="app/images/map/fa.PNG" data-toggle="tooltip" title="Faxaflói" (click)="fa()"/></li>
+                    <li><img class="image" src="app/images/map/su.PNG" data-toggle="tooltip" title="Sudurland" (click)="su()"/></li>
+                    <li><img class="image" src="app/images/map/sa.PNG" data-toggle="tooltip" title="Suðausturland" (click)="sa()"/></li>
                 </ul>
             </div>
-            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                <div class="list-group-item">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <ul *ngIf="countrySection == 'vf'" class="list-group">
+   
+                </ul>
+                <ul *ngIf="countrySection == 'nv'" class="list-group">
+   
+                </ul>
+               <ul *ngIf="countrySection == 'na'" class="list-group">
+                    <li class="row list-group-item" (click)="ak1()">Akureyri</li>
+        
+                </ul>
+               <ul *ngIf="countrySection == 'al'" class="list-group">
+
+                </ul>
+                <ul *ngIf="countrySection == 'br'" class="list-group">
+                </ul>
+               <ul *ngIf="countrySection == 'mh'" class="list-group">
+
+                </ul>
+               <ul *ngIf="countrySection == 'af'" class="list-group">
+                    <li class="row list-group-item" (click)="egl()">Eigilsstaðir</li>
+
+                </ul>
+               <ul *ngIf="countrySection == 'fa'" class="list-group">
+                    <li class="row list-group-item" (click)="rvk1()">Reykjavík</li>
+                    <li class="row list-group-item" (click)="hell()">Hellisheiði</li>
+                    <li class="row list-group-item" (click)="blfj1()">Bláfjallaskáli</li>
+                    <li class="row list-group-item" (click)="grv()">Grindavík</li>
+                    <li class="row list-group-item" (click)="selv()">Selvogur</li>
+
+                </ul>
+               <ul *ngIf="countrySection == 'su'" class="list-group">
+
+                </ul>
+               <ul *ngIf="countrySection == 'sa'" class="list-group">
+
+                </ul>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                <div class="list-group-item col-lg-6 col-md-6 col-sm-6 col-xs-6">
                     <h2>{{ observationName }}</h2>kl: {{ observationTime | date:"HH:mm" }}<br>
                     Hiti : {{ observationTemp }}<br>
                     Vindhraði {{ observationWind }} m/s<br>
                     Vindátt {{ observationWindDirection }}<br>
-                    <br>
-                </div> 
+                    {{ observationDescription }}<br>
+                </div>
+                <div class="container col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <img class="map-image" src="app/images/map/{{countrySection}}.PNG"/>
+                </div>
             </div>   
         </div>
     </div>

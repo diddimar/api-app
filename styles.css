@@ -19,6 +19,19 @@ body {
   height: 50px;
   width: 50px;
 }
+.list-image {
+  height: 30px;
+  width: 30px;
+}
+.map-image {
+  width: 95%;
+}
+.vertical-img-nav {
+  margin-top: -100px;
+}
+.vertical-img-nav li{
+  display: inline;
+}
 .my-header{
   margin-top: -40px;
   margin-left: 50%;
