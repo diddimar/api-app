@@ -8,6 +8,8 @@ import { MainComponent }  from './main/main.component';
 import { WelcomeComponent }  from './welcome/welcome.component';
 import { FlightComponent }  from './flight/flight.component';
 import { ConcertComponent }  from './concert/concert.component';
+import { EarthquakeComponent }  from './earthquake/earthquake.component';
+
 
 import { AppRoutingModule }  from './services/app-routing.module'; 
 
@@ -24,7 +26,8 @@ import { AppRoutingModule }  from './services/app-routing.module';
     MainComponent,
     WelcomeComponent,
     FlightComponent,
-    ConcertComponent
+    ConcertComponent,
+    EarthquakeComponent
     
     
      ],
