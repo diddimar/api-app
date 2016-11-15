@@ -1,3 +1,24 @@
-    <h1>Concert Component</h1>
-    <p>Display Upcoming Concerts in Iceland</p> 
-     
+<div class="jumbotron">
+    <div class="container">
+        <h2 class="my-header">Concerts</h2>
+            <div class="row">
+                <ul class="list-group">
+                    <li class="row list-group-item" *ngFor="let con of concerts">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <img src="{{ con.imageSource }}">
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <blockquote>
+                                {{ con.eventDateName }}<br>
+                                {{ con.name }}<br>
+                                kl: {{ con.dateOfShow | date:"hh:mm"}}<br>
+                                {{ con.dateOfShow | date:"dd/MM/yyyy"}}<br>
+                                {{ con.eventHallName }}<br>
+                                {{ con.userGroupName }}
+                            </blockquote> 
+                        </div>   
+                    <li>
+                </ul>
+            </div>
+    </div>
+</div>

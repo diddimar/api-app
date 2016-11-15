@@ -15,7 +15,10 @@ body {
 .jumbotron{
     margin-top: -35px;
 }
-.flight-header{
+.my-header{
   margin-top: -40px;
   margin-left: 50%;
+}
+.badge{
+  background-color: sandybrown;
 }
