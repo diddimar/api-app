@@ -16,15 +16,16 @@ export class WelcomeComponent implements OnInit {
               ) {}
     ngOnInit() {
         this.getJoke();
+ 
      }
 
      getJoke(){
-    this.http.get('http://api.icndb.com/jokes/random')
+    this.http.get('http://api.icndb.com/jokes/random?')
     .map(res => res.json())
     .subscribe((joke) => {
-      this.jokeOfTheDay = joke;
       this.jokeOfTheDay = joke.value.joke;
     })
   }
+
 
 }

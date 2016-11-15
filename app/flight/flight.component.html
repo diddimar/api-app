@@ -3,7 +3,7 @@
     <button *ngIf="!toggle" class="btn btn-info" (click)="getArrivals()"><h4>Sjá Komuflug</h4></button>
     <button *ngIf="toggle" class="btn btn-info" (click)="getDepartures()"><h4>Sjá Brottfarir</h4></button>
     <div *ngIf="toggle">
-        <h3 class="my-header">{{ numberOfArrivals }} flug lenda ás<br>Keflavíkurflugvelli í dag</h3>
+        <h3 class="my-header">{{ numberOfArrivals }} flug lenda á<br>Keflavíkurflugvelli í dag</h3>
         <div class="row">
             <ul class="list-group">
                 <li class="row list-group-item" *ngFor="let arr of flightArrivals">

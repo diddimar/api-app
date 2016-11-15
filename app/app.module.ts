@@ -12,6 +12,7 @@ import { EarthquakeComponent }  from './earthquake/earthquake.component';
 import { WeatherComponent }  from './weather/weather.component';
 import { PetrolComponent }  from './petrol/petrol.component';
 import { CurrencyComponent }  from './currency/currency.component';
+import { CountriesComponent }  from './countries/countries.component';
 
 import { NowComponent }  from './services/now';
 import { AppRoutingModule }  from './services/app-routing.module'; 
@@ -34,6 +35,7 @@ import { AppRoutingModule }  from './services/app-routing.module';
     WeatherComponent,
     PetrolComponent,
     CurrencyComponent,
+    CountriesComponent,
     
     NowComponent
      ],
