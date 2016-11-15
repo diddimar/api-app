@@ -13,5 +13,9 @@ body {
   margin: 2em;
 }
 .jumbotron{
-    height: 90%;
+    margin-top: -35px;
+}
+.flight-header{
+  margin-top: -40px;
+  margin-left: 50%;
 }

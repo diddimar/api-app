@@ -24,7 +24,6 @@ export class WelcomeComponent implements OnInit {
     .subscribe((joke) => {
       this.jokeOfTheDay = joke;
       this.jokeOfTheDay = joke.value.joke;
-      this.jokeOfTheDay.toString;
     })
   }
 

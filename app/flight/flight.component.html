@@ -1,3 +1,30 @@
-    <h1>Flight Component</h1>
-    <p>Display Arrivals and Departures to and from Icelandi KEF airport</p> 
-     
+<div class="jumbotron">
+  <div class="container">
+    <button class="btn btn-success" (click)="getArrivals()">Arrivals</button>
+    <button class="btn btn-success" (click)="getDepartures()">Departures</button>
+    <div *ngIf="toggle">
+        <h2 class="flight-header">Arrivals</h2>
+        <div class="row">
+            <ul class="list-group">
+                <li class="row list-group-item" *ngFor="let arr of flightArrivals">
+                    {{ arr.date }} {{ arr.plannedArrival }} {{ arr.flightNumber }}
+                    to {{ arr.from }}
+                    <span class="badge">{{ arr.realArrival }}</span>
+                <li>
+            </ul>
+        </div>
+    </div>
+    <div *ngIf="!toggle">
+        <h2 class="flight-header">Departures</h2>
+        <div class="row">
+            <ul class="list-group">
+                <li class="row list-group-item" *ngFor="let dep of flightDepartures">
+                    {{ dep.date }} {{ dep.plannedArrival }} {{ dep.flightNumber }}
+                     to {{ dep.to }}
+                    <span class="badge">{{ dep.realArrival }}</span>
+                <li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</div>
