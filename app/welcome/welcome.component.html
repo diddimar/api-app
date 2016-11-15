@@ -1,5 +1,9 @@
-    <h1>Main Component</h1>
+    <h1>Welcome Component</h1>
     <p>Here I plan on having a greeting and 
         an introduction for what the 
         site does.</p> 
-    <p>Generate a random joke here:</p>
+    <div class="well well-lg">
+        <blockquote> {{ jokeOfTheDay }}</blockquote>
+        <button class="btn btn-success" (click)="getJoke()">New Joke</button>
+        <span class="badge pull-right">The Joke Corner</span>
+    </div>
