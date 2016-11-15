@@ -1,9 +1,9 @@
 <div class="jumbotron">
   <div class="container">
-    <button class="btn btn-success" (click)="getArrivals()">Arrivals</button>
-    <button class="btn btn-success" (click)="getDepartures()">Departures</button>
+    <button *ngIf="!toggle" class="btn btn-info" (click)="getArrivals()">See Arrivals</button>
+    <button *ngIf="toggle" class="btn btn-info" (click)="getDepartures()">See Departures</button>
     <div *ngIf="toggle">
-        <h2 class="my-header">Arrivals</h2>
+        <h3 class="my-header">{{ numberOfArrivals }} Arrivals<br>at Kef airport today</h3>
         <div class="row">
             <ul class="list-group">
                 <li class="row list-group-item" *ngFor="let arr of flightArrivals">
@@ -23,7 +23,7 @@
         </div>
     </div>
     <div *ngIf="!toggle">
-        <h2 class="my-header">Departures</h2>
+        <h3 class="my-header">{{ numberOfDepartures }} Departures<br>from Kef airport today</h3>
         <div class="row">
             <ul class="list-group">
                 <li class="row list-group-item" *ngFor="let dep of flightDepartures">
@@ -37,6 +37,7 @@
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                         <span class="badge pull-right"><h4>{{ dep.realArrival }}</h4></span>
+                        
                     </div>
                 <li>
             </ul>

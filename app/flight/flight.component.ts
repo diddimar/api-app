@@ -8,8 +8,12 @@ import { Http } from '@angular/http';
 })
 export class FlightComponent implements OnInit {
 
-    flightDepartures;
-    flightArrivals;
+    flightArrivals:  string[];
+    numberOfArrivals : number;
+
+    flightDepartures: string[];
+    numberOfDepartures : number;
+
     toggle: boolean;
 
     constructor(
@@ -25,6 +29,7 @@ export class FlightComponent implements OnInit {
         .map(res => res.json())
         .subscribe((arrivals) => {
           this.flightArrivals = arrivals.results;
+          this.numberOfArrivals = this.flightArrivals.length;
           this.toggle = true;
         })
     }
@@ -34,6 +39,7 @@ export class FlightComponent implements OnInit {
         .map(res => res.json())
         .subscribe((departures) => {
           this.flightDepartures = departures.results;
+          this.numberOfDepartures = this.flightDepartures.length;
           this.toggle = false;
         })
     }
