@@ -7,9 +7,17 @@
         <div class="row">
             <ul class="list-group">
                 <li class="row list-group-item" *ngFor="let arr of flightArrivals">
-                    {{ arr.date }} {{ arr.plannedArrival }} {{ arr.flightNumber }}
-                    to {{ arr.from }}
-                    <span class="badge">{{ arr.realArrival }}</span>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        <h4>{{ arr.date }} {{ arr.plannedArrival }}</h4> 
+                        ____________________
+                        <h4>{{ arr.airline }}<br>{{ arr.flightNumber }}</h4>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        from<h3>{{ arr.from }}</h3> 
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        <span class="badge pull-right"><h4>{{ arr.realArrival }}</h4></span>
+                    </div>
                 <li>
             </ul>
         </div>
@@ -19,9 +27,17 @@
         <div class="row">
             <ul class="list-group">
                 <li class="row list-group-item" *ngFor="let dep of flightDepartures">
-                    {{ dep.date }} {{ dep.plannedArrival }} {{ dep.flightNumber }}
-                     to {{ dep.to }}
-                    <span class="badge">{{ dep.realArrival }}</span>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        <h4>{{ dep.date }} {{ dep.plannedArrival }}</h4> 
+                        ____________________
+                        <h4>{{ dep.airline }}<br>{{ dep.flightNumber }}</h4>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        to<h3>{{ dep.to }}</h3> 
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        <span class="badge pull-right"><h4>{{ dep.realArrival }}</h4></span>
+                    </div>
                 <li>
             </ul>
         </div>
