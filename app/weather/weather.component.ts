@@ -22,7 +22,6 @@ export class WeatherComponent implements OnInit {
     ngOnInit() { 
          this.getWeatherOverview();
          this.getWeatherForecast();
-         console.log(this.weatherForecast);
     }
 
     textaSpar(){

@@ -1,0 +1,26 @@
+<div class="jumbotron">
+    <div class="container">
+        <h2 class="my-header">Eldsneytisverð <br>um landið</h2>
+            <div class="row">
+                <ul class="list-group">
+                    <li class="row list-group-item" *ngFor="let petrol of petrolList">
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                <h2>{{ petrol.company }}</h2>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                <h3>{{ petrol.name }}</h3>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                          
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">   
+                                bensín: <h4>{{ petrol.bensin95 }}</h4>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">   
+                                dísel: <h4>{{ petrol.diesel }}</h4>
+                        </div>
+                    <li>
+                </ul>
+            </div>
+    </div>
+</div>

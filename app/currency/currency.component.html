@@ -1,0 +1,27 @@
+<div class="jumbotron">
+    <div class="container">
+        <h2 class="my-header">Gengi</h2>
+            <div class="row">
+                <ul class="list-group">
+                    <li class="row list-group-item" *ngFor="let currency of currencyList">
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                             <img class="image" src="app/images/{{currency.shortName}}.ico" />
+                             <h2>{{ currency.shortName }}</h2>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                <h3>{{ currency.longName }}</h3>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                          
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">   
+                                gengi: <h4>{{ currency.value }}</h4>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">   
+                           
+                        </div>
+                    <li>
+                </ul>
+            </div>
+    </div>
+</div>

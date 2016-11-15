@@ -16,7 +16,7 @@ export class NowComponent {
     
     setInterval(() => {
         this.date =  new Date();
-     }, 60000);
+     }, 10000);
   } 
 
 } 

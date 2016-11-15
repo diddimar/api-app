@@ -5,6 +5,8 @@ import { FlightComponent }  from '../flight/flight.component';
 import { ConcertComponent }  from '../concert/concert.component';
 import { EarthquakeComponent }  from '../earthquake/earthquake.component';
 import { WeatherComponent }  from '../weather/weather.component';
+import { PetrolComponent }  from '../petrol/petrol.component';
+import { CurrencyComponent }  from '../currency/currency.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/welcome', pathMatch: 'full' },
@@ -12,7 +14,9 @@ const routes: Routes = [
   { path: 'flights',  component: FlightComponent },
   { path: 'concerts',  component: ConcertComponent },
   { path: 'earthquakes',  component: EarthquakeComponent },
-  { path: 'weather',  component: WeatherComponent }
+  { path: 'weather',  component: WeatherComponent },
+  { path: 'petrol',  component: PetrolComponent },
+  { path: 'currency',  component: CurrencyComponent }
 
 
   
